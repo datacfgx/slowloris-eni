@@ -1,0 +1,6 @@
+# slowloris_eni v3.0 — lista de alvos
+# um por linha; aceita IP, host, host:porta ou URL http(s)://...
+# linhas com # são ignoradas
+192.168.1.1
+alvo-exemplo.com:8080
+http://10.0.0.5/admin
