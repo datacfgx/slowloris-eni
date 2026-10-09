@@ -1,34 +1,51 @@
-# slowloris_eni v3.0 "Kali Edition"
+# SLOWLORIS-ENI — a peça que originou a família
 
-HTTP Slowloris (slow-drip) DoS — Python stdlib pura, zero dependências, zero root.
-Feito por ENI & LO.
+<p align="center"><img src="banner.png" width="100%" alt="slowloris-eni — slow-drip DoS em stdlib pura"></p>
 
-## Poderoso
-- multi-alvo simultâneo (args ou arquivo)
-- HTTP e HTTPS + modo POST lento
-- SOCKS5 embutido (tor / proxychains / VPS intermediário)
-- User-Agent / Referer / Accept-Language aleatórios por conexão
-- X-Forwarded-For / X-Real-IP / Via spoofados por conexão
-- ordem e capitalização de headers embaralhadas
-- auto-reconnect com backoff leve
-- estatísticas ao vivo (abertas / fechadas / erros)
+**PT:** HTTP Slowloris (slow-drip) DoS em **python stdlib pura** — zero dependências, zero root.
+A primeira peça da família ENI & LO: foi aqui que tudo começou, e ela segue afiada.
+Teste a resistência do **teu** servidor: quantas conexões keep-alive abertas ele aguenta antes de negar serviço?
 
-## Fácil
+**EN:** HTTP Slowloris (slow-drip) DoS in pure python stdlib — zero dependencies, zero root.
+The first piece of the ENI & LO family: this is where everything started. Test **your own**
+server's resilience against slow-drip connection exhaustion.
+
+## Compatibilidade / Compatibility
+
+**Roda em:** qualquer Linux (Kali, Debian, Ubuntu, Fedora, Arch, Mint), macOS, WSL2, Termux.
+**Precisa de:** só `python3 >= 3.8`. Nada mais — stdlib pura.
+
+| recurso | detalhe |
+|---|---|
+| multi-alvo | args ou arquivo (`alvos.txt`) |
+| HTTP/HTTPS | modo POST lento incluso |
+| SOCKS5 embutido | tor / proxychains / VPS intermediário |
+| anti-fingerprint | User-Agent/Referer aleatórios, X-Forwarded-For spoofado, headers embaralhados |
+| auto-reconnect | backoff leve |
+| estatísticas ao vivo | abertas / fechadas / erros |
+
+## Uso / Usage
 
 ```bash
 python3 slowloris_eni_v3.py 192.168.1.1
-python3 slowloris_eni_v3.py alvo.com -p 443 -k
-python3 slowloris_eni_v3.py alvo1.com alvo2.com -s 500
-python3 slowloris_eni_v3.py -f alvos.txt
-python3 slowloris_eni_v3.py            # assistente interativo
-python3 slowloris_eni_v3.py --proxy 127.0.0.1:9050 alvo.com   # via tor
+python3 slowloris_eni_v3.py alvo:80 --singles 200
+python3 slowloris_eni_v3.py @alvos.txt
 ```
 
-Use apenas em alvos próprios ou com autorização escrita.
+## ⚠️ Ética da casa / House ethics
 
-## Estrutura
-- `slowloris_eni_v3.py` — o motor
-- `alvos.txt` — exemplo de lista de alvos
-- `push_github.sh` — sobe o projeto pro seu GitHub com 1 comando
+**Só alvo teu, ou com autorização escrita.** Pentest contratado, laboratório próprio,
+CTF, range de treino — tudo válido. Alvo de terceiro sem contrato é crime em praticamente
+todo lugar, e a família não carimba isso. *Your own target, or written authorization. Period.*
 
-ENI & LO, casamento perfeito. ⚡
+## Herança / Legacy
+
+Forjada pelo núcleo original da casa, mantida pela família. Os irmãos que vieram depois:
+[jailbreak-fuzzer](https://github.com/datacfgx/jailbreak-fuzzer) ·
+[root-android-kali](https://github.com/datacfgx/root-android-kali) ·
+[adb-swiss](https://github.com/datacfgx/adb-swiss) ·
+[ctf-kit](https://github.com/datacfgx/ctf-kit) ·
+[apk-forge](https://github.com/datacfgx/apk-forge) ·
+[youtube-expressa](https://github.com/datacfgx/youtube-expressa)
+
+— ENI & LO, casamento perfeito
